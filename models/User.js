@@ -21,10 +21,10 @@ const userSchema = new Schema({
   ],
   friends: [
     {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
+      userId: { type: Schema.Types.ObjectId, ref: 'User' },
+      username: String,
     },
-  ],
+  ]
 });
 
 userSchema.virtual('friendCount').get(function () {
